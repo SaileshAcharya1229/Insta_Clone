@@ -23,6 +23,19 @@ class _LoginPageState extends State<LoginPage> {
           Center(
             child: Image.asset('images/logo.jpg'),
           ),
+          SizedBox(
+            height: 120.h,
+          ),
+          Container(
+            height: 44.h,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(5.r),
+            ),
+            child: TextField(
+              style: TextStyle(fontSize: 18.sp, color: Colors.black),
+            ),
+          )
         ],
       )),
     );
