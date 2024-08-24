@@ -28,14 +28,7 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(
             height: 120.h,
           ),
-          Container(
-            height: 44.h,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(5.r),
-            ),
-            child: Textfield(email,Icons.email,'Email',email_f),
-          ),
+          Textfield(email, Icons.email, 'Email', email_f)
         ],
       )),
     );
@@ -43,32 +36,34 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget Textfield(TextEditingController controller, IconData icon, String type,
       FocusNode focusNode) {
-    return Container(
-            height: 44.h,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(5.r),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
+      child: Container(
+        height: 44.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(5.r),
+        ),
+        child: TextField(
+          style: TextStyle(fontSize: 18.sp, color: Colors.black),
+          controller: controller,
+          focusNode: focusNode,
+          decoration: InputDecoration(
+            hintText: type,
+            prefixIcon: Icon(
+              icon,
+              color: focusNode.hasFocus ? Colors.black : Colors.grey,
             ),
-            
-      child: TextField(
-        style: TextStyle(fontSize: 18.sp, color: Colors.black),
-        controller: controller,
-        focusNode: focusNode,
-        decoration: InputDecoration(
-          hintText: type,
-          prefixIcon: Icon(
-            icon,
-            color: focusNode.hasFocus ? Colors.black : Colors.grey,
-          ),
-          contentPadding:
-              EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.r),
-            borderSide: BorderSide(color: Colors.grey, width: 2.w),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.r),
-            borderSide: BorderSide(color: Colors.grey, width: 2.w),
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(5.r),
+              borderSide: BorderSide(color: Colors.grey, width: 2.w),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(5.r),
+              borderSide: BorderSide(color: Colors.grey, width: 2.w),
+            ),
           ),
         ),
       ),
