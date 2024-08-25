@@ -11,6 +11,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final email = TextEditingController();
   FocusNode email_f = FocusNode();
+  final password = TextEditingController();
+  FocusNode password_f = FocusNode();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +30,18 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(
             height: 120.h,
           ),
-          Textfield(email, Icons.email, 'Email', email_f)
+          Textfield(email, Icons.email, 'Email', email_f),
+          SizedBox(
+            height: 15.h,
+          ),
+          Textfield(password, Icons.lock, 'password', password_f),
+          SizedBox(
+            height: 10.h,
+          ),
+          Text(
+            'Forgot your password?',
+            style: TextStyle(fontSize: 13.sp, color: Colors.blue),
+          ),
         ],
       )),
     );
