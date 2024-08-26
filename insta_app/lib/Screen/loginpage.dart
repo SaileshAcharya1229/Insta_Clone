@@ -18,32 +18,57 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-          child: Column(
-        children: [
-          SizedBox(
-            width: 96.w,
-            height: 100.h,
-          ),
-          Center(
-            child: Image.asset('images/logo.jpg'),
-          ),
-          SizedBox(
-            height: 120.h,
-          ),
-          Textfield(email, Icons.email, 'Email', email_f),
-          SizedBox(
-            height: 15.h,
-          ),
-          Textfield(password, Icons.lock, 'password', password_f),
-          SizedBox(
-            height: 10.h,
-          ),
-          Text(
-            'Forgot your password?',
-            style: TextStyle(fontSize: 13.sp, color: Colors.blue),
-          ),
-        ],
-      )),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            SizedBox(
+              width: 96.w,
+              height: 100.h,
+            ),
+            Center(
+              child: Image.asset('images/logo.jpg'),
+            ),
+            SizedBox(
+              height: 120.h,
+            ),
+            Textfield(email, Icons.email, 'Email', email_f),
+            SizedBox(
+              height: 15.h,
+            ),
+            Textfield(password, Icons.lock, 'password', password_f),
+            SizedBox(
+              height: 10.h,
+            ),
+            Forgot(),
+            SizedBox(
+              height: 10.h,
+            ),
+            Container(
+              width: double.infinity,
+              height: 44.h,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Text('Login'),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget Forgot() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
+      child: Text(
+        'Forgot your password?',
+        style: TextStyle(
+          fontSize: 13.sp,
+          color: Colors.blue,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 
