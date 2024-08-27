@@ -43,16 +43,49 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 10.h,
             ),
-            Container(
-              width: double.infinity,
-              height: 44.h,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-              child: Text('Login'),
+            Login(),
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                Text(
+                  "Dont have account?",
+                  style: TextStyle(
+                    fontSize: 13.sp,
+                    color: Colors.grey,
+                  ),
+                ),
+                Text(
+                  "Sign Up",
+                  style: TextStyle(
+                    fontSize: 13.sp,
+                    color: Colors.grey,
+                  ),
+                )
+              ],
             )
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget Login() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
+      child: Container(
+        alignment: Alignment.center,
+        width: double.infinity,
+        height: 44.h,
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+        child: Text(
+          'Login',
+          style: TextStyle(
+              fontSize: 23.sp,
+              color: Colors.white,
+              fontWeight: FontWeight.bold),
         ),
       ),
     );
