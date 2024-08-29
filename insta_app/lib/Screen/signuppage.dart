@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpPage extends StatefulWidget {
-  
-  const SignUpPage({super.key});
+  final VoidCallback show;
+  const SignUpPage(this.show, {super.key});
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();

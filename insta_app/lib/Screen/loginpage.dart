@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginPage extends StatefulWidget {
-  
-  const LoginPage({super.key});
+  final VoidCallback show;
+  const LoginPage(this.show,{super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -66,13 +66,16 @@ class _LoginPageState extends State<LoginPage> {
               color: Colors.grey,
             ),
           ),
-          Text(
-            "Sign Up",
-            style: TextStyle(
-              fontSize: 15.sp,
-              color: Colors.blue,
+          GestureDetector(
+            onTap: widget.show,
+            child: Text(
+              "Sign Up",
+              style: TextStyle(
+                fontSize: 15.sp,
+                color: Colors.blue,
+              ),
             ),
-          )
+          ),
         ],
       ),
     );

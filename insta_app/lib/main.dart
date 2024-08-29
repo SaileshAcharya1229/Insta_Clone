@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insta_app/Auth/auth_screen.dart';
 import 'package:insta_app/Screen/loginpage.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:ScreenUtilInit(designSize: Size(375,812),child:  LoginPage()),
+      home:ScreenUtilInit(designSize: Size(375,812),child:  AuthPage()),
     );
   }
 }
